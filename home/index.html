@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="dc.creator" content="Christopher Simmons - http://hovr2pi.org" />
+    <title>dotsplat — the dotfile syncronizer that you never knew you wanted </title>
+    <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/chunkfive.css" type="text/css" media="screen" />
+    
+    
+    <script type="text/javascript">
+        function selectText() {
+            if (document.selection) {
+                var range = document.body.createTextRange();
+                range.moveToElementText(document.getElementById('selectable'));
+                range.select();
+            } else if (window.getSelection) {
+                var range = document.createRange();
+                range.selectNode(document.getElementById('selectable'));
+                window.getSelection().addRange(range);
+            }
+        }
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="header">
+        <h1><a href="index.html">dotsplat</a></h1>
+        <p id="subtitle"><strong>uses git in concert with symlinks to track your precious dotfiles</strong></p>
+
+      <div id="informations">
+        <ul>
+          <li>
+            <div class="group row">
+              <div class="col-1">
+		<p>Installation -- Create an empty git repo named dotfiles</p> 
+              </div>
+              <div class="col-2">
+                <pre><code><span style="color: #e3d796;">$</span>curl -fsSL http://install.hovr2pi.org/dotsplat | bash </code></pre>
+                <pre><code><span style="color: #e3d796;">$</span>source $HOME/.dotsplat.git/dotsplat.sh </code></pre>
+                <pre><code><span style="color: #e3d796;">$</span>dotsplat clone https://github.com/$USERNAME/dotfiles</code></pre>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="group row">
+              <div class="col-1">
+                <p>Add files to be tracked</p>
+              </div>
+              <div class="col-2">
+		<pre><code><span style="color: #e3d796;">$</span> dotsplat track $HOME/.somedotfile1 # adding a file to dotsplat
+			<span style="color: #e3d796;">$</span> dotsplat track $HOME/.somedotfile2 # tracking a second file
+			<span style="color: #e3d796;">$</span> dotsplat cd dotfiles # pops you into the git repo backend for your dotfiles
+			<span style="color: #e3d796;">$</span> git commit -a 
+			<span style="color: #e3d796;">$</span> git push -u origin master
+		</code></pre>
+
+              </div>
+            </div>
+          </li>
+  </body>
+</html>
